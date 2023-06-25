@@ -259,7 +259,7 @@ from cte
 where cnt = min_cnt
 ;
 
--- 20.	Вывести среднее количество вылетов в день из Москвы за 11 августа 2017 года
+-- 20.	Вывести среднее количество вылетов в день из Москвы август 2017 года
 with cte as(
 	select to_char(coalesce(actual_departure_local , scheduled_departure_local), 'YYYY-MM-dd') as dt, count(flight_id) as cnt 
 	from bookings.flights_v f
