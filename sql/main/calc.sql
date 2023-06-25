@@ -263,7 +263,7 @@ where cnt = min_cnt
 with cte as(
 	select to_char(coalesce(actual_departure_local , scheduled_departure_local), 'YYYY-MM-dd') as dt, count(flight_id) as cnt 
 	from bookings.flights_v f
-	where to_char(coalesce(actual_departure_local , scheduled_departure_local), 'YYYY-MM-dd') = '2017-08-11'
+	where to_char(coalesce(actual_departure_local , scheduled_departure_local), 'YYYY-MM') = '2017-08'
 		and departure_city = 'Москва'
 		and status in ('Departed','Arrived')
 	group by to_char(coalesce(actual_departure_local , scheduled_departure_local), 'YYYY-MM-dd')
